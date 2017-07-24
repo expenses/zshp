@@ -2,6 +2,8 @@
 name = "shp"
 version = "0.1.0"
 authors = ["lihao zcartology@gmail.com"]
-
+description = "A shapefile parser written in rust."
+license = "Apache"
+repository = "https://github.com/zcarto/shp"
 [dependencies]
 byteorder = "1"
