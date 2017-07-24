@@ -1,0 +1,7 @@
+[package]
+name = "shp"
+version = "0.1.0"
+authors = ["lihao zcartology@gmail.com"]
+
+[dependencies]
+byteorder = "1"
