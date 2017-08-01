@@ -1,6 +1,6 @@
 [package]
 name = "shp"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["lihao zcartology@gmail.com"]
 description = "A shapefile parser written in rust."
 license = "Apache-2.0"

@@ -9,8 +9,8 @@ use std::default::Default;
 
 #[derive(Debug)]
 pub struct ShpFile {
-    header: ShpHeader,
-    records: Vec<ShpRecord>,
+    pub header: ShpHeader,
+    pub records: Vec<ShpRecord>,
 }
 
 #[derive(Debug)]
@@ -130,8 +130,8 @@ impl ShapeType {
 }
 #[derive(Debug)]
 pub struct ShpRecord {
-    header: ShpRecordHeader,
-    content: ShpRecordContent,
+    pub header: ShpRecordHeader,
+    pub content: ShpRecordContent,
 }
 #[derive(Debug)]
 pub struct ShpRecordHeader {
@@ -322,7 +322,6 @@ impl ShpReader {
     pub fn read(&self) -> ShpFile {
         let header = ShpHeader::parse(self.shp_header_buffer);
         let mut shp_file = ShpFile { header: header, records: Vec::new()};
-        // first record
         let mut record_buffer = &self.record_buffer[..];
         while !record_buffer.is_empty() {
             let record_header = ShpRecordHeader::parse(&record_buffer[0..8]);
@@ -337,7 +336,6 @@ impl ShpReader {
         }    
         shp_file  
     }
-
 }
 
 
