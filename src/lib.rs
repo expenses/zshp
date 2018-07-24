@@ -173,8 +173,8 @@ impl ShpRecordContent {
 }
 #[derive(Debug)]
 pub struct PointShape {
-    x: f64,
-    y: f64,
+    pub x: f64,
+    pub y: f64,
 }
 impl PointShape {
     pub fn parse(content: &[u8]) -> PointShape {
@@ -186,12 +186,12 @@ impl PointShape {
 }
 #[derive(Debug)]
 pub struct MultiPointShape {
-    xmin: f64,
-    xmax: f64,
-    ymin: f64,
-    ymax: f64,
-    num_points: i32,
-    points: Vec<PointShape>,
+    pub xmin: f64,
+    pub xmax: f64,
+    pub ymin: f64,
+    pub ymax: f64,
+    pub num_points: i32,
+    pub points: Vec<PointShape>,
 }
 impl MultiPointShape {
     pub fn parse(content: &[u8]) -> MultiPointShape {
@@ -217,14 +217,14 @@ impl MultiPointShape {
 }
 #[derive(Debug)]
 pub struct PolyLineShape {
-    xmin: f64,
-    xmax: f64,
-    ymin: f64,
-    ymax: f64,
-    num_parts: i32,
-    num_points: i32,
-    parts: Vec<i32>,
-    points: Vec<PointShape>,
+    pub xmin: f64,
+    pub xmax: f64,
+    pub ymin: f64,
+    pub ymax: f64,
+    pub num_parts: i32,
+    pub num_points: i32,
+    pub parts: Vec<i32>,
+    pub points: Vec<PointShape>,
 }
 impl PolyLineShape {
     pub fn parse(content: &[u8]) -> PolyLineShape {
@@ -258,15 +258,15 @@ impl PolyLineShape {
 }
 #[derive(Debug)]
 pub struct PolygonShape {
-    xmin: f64,
-    xmax: f64,
-    ymin: f64,
-    ymax: f64,
-    num_parts: i32,
-    num_points: i32,
+    pub xmin: f64,
+    pub xmax: f64,
+    pub ymin: f64,
+    pub ymax: f64,
+    pub num_parts: i32,
+    pub num_points: i32,
     //每一个part的首位两点必须相同  
-    parts: Vec<i32>,
-    points: Vec<PointShape>,
+    pub parts: Vec<i32>,
+    pub points: Vec<PointShape>,
 }
 impl PolygonShape {
     pub fn parse(content: &[u8]) -> PolygonShape {
